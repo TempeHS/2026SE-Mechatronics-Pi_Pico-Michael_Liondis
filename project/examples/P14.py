@@ -45,12 +45,12 @@ sleep_ms(1000)
 
 
 # Bouncy Square animation
-square = 15   # square edge length (px)
+square = 1   # square edge length (px)
 x = (WIDTH-1)/2   # starting position
 y = (HEIGHT-1)/2  # starting y position
 
-v = {'x': 2.3, # Starting velocity (pixels per animation frame)
-     'y': 3.5}
+v = {'x': 12.3, # Starting velocity (pixels per animation frame)
+     'y': 13.5}
 
 collisionCount = 0
 while True:
