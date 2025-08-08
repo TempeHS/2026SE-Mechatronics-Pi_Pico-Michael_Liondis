@@ -15,7 +15,7 @@ left_servo = Servo(pwm=servo_pwm_left, min_us=min_us, max_us=max_us, dead_zone_u
 
 right_servo = Servo(pwm=servo_pwm_right, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq)
 
-movement = Movement( right_servo, left_servo, debug=True)
+movement = Movement(right_servo, left_servo, debug=True)
 
 print("Forward in 2 seconds")
 sleep(2)
