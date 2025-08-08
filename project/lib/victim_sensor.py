@@ -13,11 +13,12 @@ class VictimSensor:
         self.__debug = debug
 
     def sense_victim(self):
-        while True:
-            data = self.__colourSensor.readHSV()
-            hue = data['hue']
+        print("test")
+        # while True:
+        #     data = self.__colourSensor.readHSV()
+        #     hue = data['hue']
 
-            label = colourSensor.classifyHue() # Read the sensor again, this time classify the colour
-            print(str(label) + " Hue: " + str(hue))
-
-            sleep_ms(1000)
+        #     if 75 < hue < 90:
+        #         print("green")
+        #     else: 
+        #         print("not green")

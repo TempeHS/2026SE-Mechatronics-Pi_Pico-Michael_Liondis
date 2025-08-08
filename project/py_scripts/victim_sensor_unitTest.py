@@ -7,6 +7,7 @@ colourSensor = PiicoDev_VEML6040()
 
 display = create_PiicoDev_SSD1306()
 
-VictimSensor = VictimSensor(display, colourSensor, True)
+VictimSensor = VictimSensor(display, colourSensor, False)
 
+print("debug")
 VictimSensor.sense_victim()
