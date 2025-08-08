@@ -3,7 +3,6 @@ from PiicoDev_SSD1306 import *
 from PiicoDev_Unified import sleep_ms
 
 colourSensor = PiicoDev_VEML6040()
-
 display = create_PiicoDev_SSD1306()
 
 class VictimSensor:
@@ -13,12 +12,11 @@ class VictimSensor:
         self.__debug = debug
 
     def sense_victim(self):
-        print("test")
-        # while True:
-        #     data = self.__colourSensor.readHSV()
-        #     hue = data['hue']
-
-        #     if 75 < hue < 90:
-        #         print("green")
-        #     else: 
-        #         print("not green")
+        if self.__debug:
+            print("sensing")
+        data = self.__colourSensor.readHSV()
+        hue = data['hue']
+        if 75 < hue < 90:
+            print("green")
+        else: 
+            print("not green")
