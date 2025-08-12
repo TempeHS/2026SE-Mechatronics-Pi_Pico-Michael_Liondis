@@ -1,22 +1,16 @@
-from PiicoDev_VEML6040 import PiicoDev_VEML6040
-from PiicoDev_SSD1306 import *
-from PiicoDev_Unified import sleep_ms
-
-colourSensor = PiicoDev_VEML6040()
-display = create_PiicoDev_SSD1306()
-
 class VictimSensor:
-    def __init__(self, display, colourSensor, debug=True):
-        self.__display = display
-        self.__colourSensor = colourSensor
+    def __init__(self, colourSensor, debug):
+        #self.__display = display
+        self.__colour_Sensor = colourSensor
         self.__debug = debug
 
     def sense_victim(self):
         if self.__debug:
             print("sensing")
-        data = self.__colourSensor.readHSV()
+        data = self.__colour_Sensor.readHSV()
+
         hue = data['hue']
-        if 75 < hue < 90:
-            print("green")
-        else: 
-            print("not green")
+        if hue > 75 and hue < 85:
+            return "green"
+        else:
+            return "not green"
