@@ -1,11 +1,14 @@
-from victim_sensor import VictimSensor
+from victim_sensor import Victim_Sensor
 from PiicoDev_VEML6040 import PiicoDev_VEML6040
-from time import sleep
+from PiicoDev_SSD1306 import *
+from PiicoDev_Unified import sleep_ms
+from time import sleep 
 
-colourSensor = PiicoDev_VEML6040()
+sensor = PiicoDev_VEML6040()
+display = create_PiicoDev_SSD1306()
 
-victim_sensor = VictimSensor(colourSensor, False)
+Victim_Sensor = Victim_Sensor(display, sensor, False)
 
 while True:
-    print(victim_sensor.sense_victim())
+    print(Victim_Sensor.SenseVictim())
     sleep(0.1)

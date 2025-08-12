@@ -13,7 +13,7 @@ display = create_PiicoDev_SSD1306()
 # Text and numbers
 for counter in range(0,101):
     display.fill(0)
-    display.text("PiicoDev",30,20, 1)
+    display.text("PiicoDev",50,50, 5)
     display.text(str(counter),50,35, 1)
     display.show()
 sleep_ms(500)
