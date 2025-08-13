@@ -4,7 +4,7 @@ from machine import Pin
 
 
 # File name of the script to import
-file_name = "victim_sensor_unitTest"
+file_name = "controller"
 
 # Add the path to the sys.path
 sys.path.append("/py_scripts")
