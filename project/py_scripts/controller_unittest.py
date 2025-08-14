@@ -28,13 +28,13 @@ right_servo = Servo(pwm=servo_pwm_right, min_us=min_us, max_us=max_us, dead_zone
 
 movement = Movement(right_servo, left_servo, False)
 
-system = Controller(movement, range_left, range_front, sensor, display, True)
+system = Controller(movement, range_left, range_front, sensor, True)
 
 while True: 
     print("testing system")
     sleep(2)
     print("testing forwards state")
-    system.set_move_forwards_state()
+    system.move_forward()
     sleep(2)
     print("testing idle state")
     system.idle_state()

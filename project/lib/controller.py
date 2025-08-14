@@ -22,7 +22,7 @@ class Controller:
             self.state = "READ"
             print(Lultra.distance_mm, Fultra.distance_mm)
 
-        def set_move_forwards_state(self):
+        def move_forward(self):
             if self.__debug:
                 print("System: FORWARDS state")
             self.state = "FORWARDS"
