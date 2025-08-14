@@ -34,7 +34,7 @@ while True:
     print("testing system")
     sleep(2)
     print("testing forwards state")
-    system.move_forward()
+    system.set_move_forwards_state()
     sleep(2)
     print("testing idle state")
     system.idle_state()
