@@ -1,4 +1,4 @@
-from controller import Controller  
+from controller import Controller
 from movement import Movement
 from victim_sensor import Victim_Sensor
 from PiicoDev_Ultrasonic import PiicoDev_Ultrasonic
@@ -33,14 +33,7 @@ system = Controller(movement, range_left, range_front, sensor, True)
 while True: 
     system.update()
     sleep(0.1)
-    
-    
-    
-    
-    
-    
-    
-    
+
 # print("testing system")
 # sleep(2)
 # print("testing forwards state")
