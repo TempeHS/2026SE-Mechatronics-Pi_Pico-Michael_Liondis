@@ -31,24 +31,34 @@ movement = Movement(right_servo, left_servo, False)
 system = Controller(movement, range_left, range_front, sensor, True)
 
 while True: 
-    print("testing system")
-    sleep(2)
-    print("testing forwards state")
-    system.set_move_forwards_state()
-    sleep(2)
-    print("testing idle state")
-    system.idle_state()
-    sleep(2)
-    print("testing backwards state")
-    system.set_move_backwards_state()
-    sleep(2)
-    print("testing lturn state")
-    system.set_rotate_left_state()
-    sleep(2)
-    print("testing rturn state")
-    system.set_rotate_right_state()
-    sleep(2)
-    system.set_idle_state()
+    system.update()
+    sleep(0.1)
+    
+    
+    
+    
+    
+    
+    
+    
+# print("testing system")
+# sleep(2)
+# print("testing forwards state")
+# system.set_move_forwards_state()
+# sleep(2)
+# print("testing idle state")
+# system.idle_state()
+# sleep(2)
+# print("testing backwards state")
+# system.set_move_backwards_state()
+# sleep(2)
+# print("testing lturn state")
+# system.set_rotate_left_state()
+# sleep(2)
+# print("testing rturn state")
+# system.set_rotate_right_state()
+# sleep(2)
+# system.set_idle_state()
 
 
 

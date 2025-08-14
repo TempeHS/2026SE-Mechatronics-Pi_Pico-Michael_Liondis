@@ -88,7 +88,9 @@ class Controller:
                 #turn right so ultra is facing wall
                 self.set_rotate_right_state()
             
+            # when theres no wall on the left and front
             elif left_dist > wall_dist:
+                # turn left 
                 self.set_rotate_left_state()
             
             else:
