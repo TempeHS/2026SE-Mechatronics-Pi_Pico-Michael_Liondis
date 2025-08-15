@@ -62,6 +62,8 @@ class Controller:
             if now - self.last_state_change < self.turn_delay:
                 return # continues the turn
             else:
+                self.idle_state()
+                sleep(2)
                 self.__wheels.move_forward()
         
         # when senses victim, stops for 5 seconds then continues
@@ -69,7 +71,7 @@ class Controller:
 
         if VictimStatus == "green":
             self.idle_state()
-            sleep(5)
+            sleep(4)
             self.__wheels.move_forward()
         
         front_dist = self.__Fultra.distance_mm
