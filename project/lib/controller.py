@@ -62,8 +62,6 @@ class Controller:
             if now - self.last_state_change < self.turn_delay:
                 return # continues the turn
             else:
-                self.idle_state()
-                sleep(2)
                 self.__wheels.move_forward()
         
         # when senses victim, stops for 5 seconds then continues
@@ -82,20 +80,29 @@ class Controller:
         # wall to the left and wall to the right 
         if front_dist < wall_dist and left_dist < wall_dist:
             # turn right
+            self.idle_state()
+            sleep(2)
             self.set_rotate_right_state()
             self.last_state_change = now
+            sleep(2)
 
         # wall in front    
         elif front_dist < wall_dist:
             #turn right so ultra is facing wall
+            self.idle_state()
+            sleep(2)
             self.set_rotate_right_state()
             self.last_state_change = now
+            sleep(2)
         
         # when theres no wall on the left and front
         elif left_dist > wall_dist:
             # turn left 
+            self.idle_state()
+            sleep(2)
             self.set_rotate_left_state()
             self.last_state_change = now
+            sleep(2)
         
         else:
             self.set_move_forwards_state()
