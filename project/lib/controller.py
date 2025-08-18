@@ -1,4 +1,5 @@
-from time import sleep, time
+from time import time
+from PiicoDev_Unified import sleep_ms
 
 class Controller: 
     def __init__(self, wheels, Lultra, Fultra, colour_sensor, debug):
@@ -69,7 +70,7 @@ class Controller:
 
         if VictimStatus == "green":
             self.idle_state()
-            sleep(4)
+            sleep_ms(4000)
             self.__wheels.move_forward()
         
         front_dist = self.__Fultra.distance_mm
@@ -81,28 +82,35 @@ class Controller:
         if front_dist < wall_dist and left_dist < wall_dist:
             # turn right
             self.idle_state()
-            sleep(2)
+            sleep_ms(2000)
             self.set_rotate_right_state()
+            sleep_ms(1000)
+            self.idle_state()
+            sleep_ms(2000)
             self.last_state_change = now
-            sleep(2)
 
         # wall in front    
         elif front_dist < wall_dist:
             #turn right so ultra is facing wall
             self.idle_state()
-            sleep(2)
+            sleep_ms(2000)
             self.set_rotate_right_state()
+            sleep_ms(1000)
+            self.idle_state()
+            sleep_ms(2000)
             self.last_state_change = now
-            sleep(2)
         
         # when theres no wall on the left and front
         elif left_dist > wall_dist:
             # turn left 
+            sleep_ms(500)
             self.idle_state()
-            sleep(2)
+            sleep_ms(2000)
             self.set_rotate_left_state()
+            sleep_ms(1000)
+            self.idle_state()
+            sleep_ms(2000)
             self.last_state_change = now
-            sleep(2)
         
         else:
             self.set_move_forwards_state()
