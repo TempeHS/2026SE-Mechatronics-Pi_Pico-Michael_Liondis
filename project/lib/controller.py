@@ -72,11 +72,14 @@ class Controller:
             self.idle_state()
             sleep_ms(4000)
             self.__wheels.move_forward()
+        if VictimStatus == "not green":
+            display.show()
+            display.fill(0)
         
         front_dist = self.__Fultra.distance_mm
         left_dist = self.__Lultra.distance_mm
 
-        wall_dist = 150 
+        wall_dist = 100 
 
         # wall to the left and wall to the right 
         if front_dist < wall_dist and left_dist < wall_dist:
@@ -84,7 +87,7 @@ class Controller:
             self.idle_state()
             sleep_ms(2000)
             self.set_rotate_right_state()
-            sleep_ms(1000)
+            sleep_ms(1050)
             self.idle_state()
             sleep_ms(2000)
             self.last_state_change = now
@@ -95,7 +98,7 @@ class Controller:
             self.idle_state()
             sleep_ms(2000)
             self.set_rotate_right_state()
-            sleep_ms(1000)
+            sleep_ms(1050)
             self.idle_state()
             sleep_ms(2000)
             self.last_state_change = now
@@ -107,7 +110,7 @@ class Controller:
             self.idle_state()
             sleep_ms(2000)
             self.set_rotate_left_state()
-            sleep_ms(1000)
+            sleep_ms(1050)
             self.idle_state()
             sleep_ms(2000)
             self.last_state_change = now
