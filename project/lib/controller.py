@@ -72,6 +72,7 @@ class Controller:
             self.idle_state()
             sleep_ms(4000)
             self.__wheels.move_forward()
+            sleep_ms(500)
         if VictimStatus == "not green":
             display.show()
             display.fill(0)
