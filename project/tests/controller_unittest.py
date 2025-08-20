@@ -14,6 +14,8 @@ range_left = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
 sensor = PiicoDev_VEML6040()
 display = create_PiicoDev_SSD1306()
 
+Victim_Sensor = Victim_Sensor(display, sensor, False)
+
 freq = 50
 min_us = 500
 max_us = 2500
@@ -28,41 +30,8 @@ right_servo = Servo(pwm=servo_pwm_right, min_us=min_us, max_us=max_us, dead_zone
 
 movement = Movement(right_servo, left_servo, False)
 
-system = Controller(movement, range_left, range_front, sensor, True)
+system = Controller(movement, range_left, range_front, Victim_Sensor, True)
 
 while True: 
     system.update()
     sleep(0.1)
-
-# print("testing system")
-# sleep(2)
-# print("testing forwards state")
-# system.set_move_forwards_state()
-# sleep(2)
-# print("testing idle state")
-# system.idle_state()
-# sleep(2)
-# print("testing backwards state")
-# system.set_move_backwards_state()
-# sleep(2)
-# print("testing lturn state")
-# system.set_rotate_left_state()
-# sleep(2)
-# print("testing rturn state")
-# system.set_rotate_right_state()
-# sleep(2)
-# system.set_idle_state()
-
-
-
-
-
-
-
-# while True:
-#     print(range_front.distance_mm, range_left.distance_mm)
-#     sleep(0.1)
-#     if range_left.distance_mm <= 100:
-#         movement.move_forward()
-#     elif range_left.distance_mm >= 100:
-#         movement.stop()
