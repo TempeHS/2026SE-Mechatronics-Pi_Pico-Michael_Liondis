@@ -9,6 +9,9 @@ display = create_PiicoDev_SSD1306()
 
 Victim_Sensor = Victim_Sensor(display, sensor, False)
 
+print("testing victim sensor")
+sleep(2)
+print("testing SenseVictim")
 while True:
     print(Victim_Sensor.SenseVictim())
     sleep(0.1)
