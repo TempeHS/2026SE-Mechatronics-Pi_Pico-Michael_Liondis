@@ -29,7 +29,7 @@ class Movement:
             print("Moving Forward")
         # right & left servo turn forward
         self.__right_servo.set_duty(1000)
-        self.__left_servo.s et_duty(2000)
+        self.__left_servo.set_duty(2000)
 
     def move_backward(self):
         if self.__debug:
