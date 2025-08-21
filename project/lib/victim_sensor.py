@@ -4,7 +4,7 @@ from PiicoDev_Unified import sleep_ms
 display = create_PiicoDev_SSD1306()
 
 class Victim_Sensor:
-    def __init__(self, display, colour_sensor, debug):
+    def __init__(self, display, colour_sensor, debug=False):
         self.__colour_sensor = colour_sensor
         self.__debug = debug
         self.__display = display
