@@ -86,7 +86,7 @@ class Controller:
         front_dist = self.__Fultra.distance_mm
         left_dist = self.__Lultra.distance_mm
 
-        wall_dist = 80     # distance to the wall that the ultras will read
+        wall_dist = 100     # distance to the wall that the ultras will read
 
         # Case 1: wall in fron AND on left --> turn right (so left ultra is facing wall)
         if front_dist < wall_dist and left_dist < wall_dist:
@@ -118,6 +118,8 @@ class Controller:
             sleep_ms(1050)
             self.idle_state()
             sleep_ms(2000)
+            self.set_move_forwards_state()
+            sleep_ms(500)
             self.last_state_change = now
         
         # Case 4: Default --> moves forwards
